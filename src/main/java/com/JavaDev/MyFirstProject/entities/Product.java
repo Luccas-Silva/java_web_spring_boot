@@ -2,18 +2,31 @@ package com.JavaDev.MyFirstProject.entities;
 
 import java.io.Serializable;
 
-public class Product implements Serializable{
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Product implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	private Double price;
 	
+	@ManyToOne
+	@JoinColumn(name = "category_id")
 	private Category category;
-	
-	public Product () {
-		
+
+	public Product() {
+
 	}
+
 	public Product(Long id, String name, Double price, Category category) {
 		super();
 		this.id = id;
@@ -25,6 +38,7 @@ public class Product implements Serializable{
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -32,6 +46,7 @@ public class Product implements Serializable{
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -39,6 +54,7 @@ public class Product implements Serializable{
 	public Double getPrice() {
 		return price;
 	}
+
 	public void setPrice(Double price) {
 		this.price = price;
 	}
@@ -46,6 +62,7 @@ public class Product implements Serializable{
 	public Category getCategory() {
 		return category;
 	}
+
 	public void setCategory(Category category) {
 		this.category = category;
 	}
@@ -57,6 +74,7 @@ public class Product implements Serializable{
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
