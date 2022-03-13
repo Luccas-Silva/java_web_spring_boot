@@ -1,4 +1,4 @@
-# Projeto Java web no Spring Boot
+# Primeiro projeto Java web no Spring Boot
 
 ## O que você vai aprender
 - Criar um simples projeto Java web no Spring Boot e Maven
