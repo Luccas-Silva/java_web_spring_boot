@@ -1,4 +1,4 @@
-<div className="React-WebSite">
+<div className="Java-WebSite">
   <h1>
     <img align="center" alt="java" height="60" width="80" src="https://github.com/devicons/devicon/blob/master/icons/java/java-plain.svg"/>
     Primeiro projeto Java web no Spring Boot
